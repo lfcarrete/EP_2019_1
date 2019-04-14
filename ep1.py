@@ -1,7 +1,7 @@
 # EP 2019-1: Escape Insper
 #
 # Alunos: 
-# - aluno A: Fulano da Silva, fulanos@insper.edu.br
+# - aluno A: Luis Filipe Carrete, luisfsc@insper.edu.br
 # - aluno B: Sicrano de Almeida, sicranoa1@insper.edu.br
 
 def carregar_cenarios():
@@ -59,8 +59,9 @@ def main():
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
+        print(cenarios['inicio']['titulo'])
+        print("-" * len(nome_cenario_atual))
+        print(cenario_atual['descricao'])
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
