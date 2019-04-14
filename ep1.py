@@ -58,10 +58,13 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
-
-        print(cenarios['inicio']['titulo'])
-        print("-" * len(nome_cenario_atual))
-        print(cenario_atual['descricao'])
+        titulo_cenario_atual = cenario_atual['titulo']
+        descricao_cenario_atual = cenario_atual['descricao']
+        
+        
+        print(titulo_cenario_atual)
+        print("-" * len(titulo_cenario_atual))
+        print(descricao_cenario_atual)
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
