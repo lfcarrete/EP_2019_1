@@ -10,10 +10,27 @@ def carregar_cenarios():
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
+                "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca"
             }
         },
+        '''"andar VR": {
+            "titulo": "Andar da distração",
+            "descricao": "Andar para jogar video game em vez de fazer o trabalho",
+            "opcoes": { 
+                "inicio": "Tomar o elevador para o saguao de entrada",
+                "jogar vr": "Ligar o console e joga por horas",
+            }
+        },
+        "jogar vr": {
+            "titulo": "jogo infinito",
+            "descricao" : "nuca ira sair dessa sala, somente se ganhar.",
+            "opcoes": {
+                "bater no chefao": "chute um numero de 0 a 10",
+                "desistir": "desista"
+            }
+        },'''
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
