@@ -9,7 +9,8 @@ def carregar_cenarios():
             "opcoes": {
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "biblioteca": "Ir para a biblioteca",
+                "fumódromo": "Ir para o fumódromo"
             }
         },    
         "andar VR": {
@@ -47,7 +48,22 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+
+                "inicio": "Voltar para o saguao de entrada",
+                
+            }
+        },
+    
+    
+    "fumódromo": {
+            "titulo": "fomódromo",
+            "descricao": "Você está no lugar mais poluído do Insper!",
+            "opcoes": {
+                "continuar no fumódromo": "Continuar e se juntar ",
+                "início": "Voltar para o saguao de entrada",
+                "biblioteca": "Ir para a biblioteca",
+                "fumódromo": "ir tomar um ar poluído no fumódramo"
+
             }
         }
     }
