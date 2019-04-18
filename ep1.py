@@ -2,7 +2,7 @@
 #
 # Alunos: 
 # - aluno A: Luis Filipe Carrete, luisfsc@insper.edu.br
-# - aluno B: Luís Fro, luisfml@insper.edu.br
+# - aluno B: Luís Filipe Loureiro, luisfml@insper.edu.br
 
 def carregar_cenarios():
     cenarios = {
