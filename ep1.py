@@ -23,7 +23,7 @@ def carregar_cenarios():
         },
         "jogar vr": {
             "titulo": "jogo infinito",
-            "descricao" : "nuca ira sair dessa sala, somente se ganhar.",
+            "descricao" : "nunca ira sair dessa sala, somente se ganhar.",
             "opcoes": {
                 "tentar tirar o oculos": "chute um numero de 0 a 10",
                 "desistir": "desista"
@@ -110,8 +110,8 @@ def main():
             game_over = True
 
         else:
-            for e in opcoes:
-                print('- ' + e)
+            for e, i in opcoes.items():
+                print('- ' + e + " : " + i)
             
             escolha = input("O que vai fazer? ")
             
