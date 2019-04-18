@@ -102,7 +102,7 @@ def main():
     
     
     while not game_over:
-        vr = random.randint(0,10)
+        vr = 5
         
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
@@ -127,8 +127,7 @@ def main():
             if escolha == "tentar tirar o oculos":
                 chuteVR = int(input("Chute numero de 0 a 10 "))
                 if chuteVR != vr:
-                    vida -= 1
-                    print('Vida: {0}'.format(vida))
+                    
                     while vida > 0 and chuteVR != vr:
                         chuteVR = int(input("Chute numero de 0 a 10 "))
                         if chuteVR != vr:
@@ -136,18 +135,13 @@ def main():
                             print('Vida: {0}'.format(vida))
                        
                     if vida == 0:
-                        print("Suas vidas acabaram")
                         game_over = True
-                        
-                if chuteVR == vr:
+                else:
                     coins += 500
-                    print("\n Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
-                    print("Adiquiriu a opcao de fugir para o inicio \n")
+                    print("Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
+                    print("Adiquiriu a opcao de fugir para o inicio")
                     cenarios["jogar vr"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
                 escolha = "inicio" 
-            if escolha == "desistir":
-                print("Voce desistiu")
-                game_over = True
                 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
