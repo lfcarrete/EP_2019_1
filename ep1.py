@@ -62,7 +62,7 @@ def carregar_cenarios():
             "titulo": "fomódromo",
             "descricao": "Você está no lugar mais poluído do Insper!",
             "opcoes": {
-                "continuar no fumódromo": "Continuar e dar uma relaxada",
+                "continuar no fumódromo": "Continuar e se juntar ",
                 "início": "Voltar para o saguao de entrada",
                 "biblioteca": "Ir para a biblioteca",
                 "fumódromo": "ir tomar um ar poluído no fumódramo"
