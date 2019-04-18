@@ -21,7 +21,7 @@ def carregar_cenarios():
                 "jogar vr": "Ligar o console e joga por horas",
             }
         },
-        "jogar vr": {
+        "jogar VR": {
             "titulo": "jogo infinito",
             "descricao" : "nunca ira sair dessa sala, somente se ganhar.",
             "opcoes": {
