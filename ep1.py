@@ -1,8 +1,3 @@
-# EP 2019-1: Escape Insper
-#
-# Alunos: 
-# - aluno A: Luis Filipe Carrete, luisfsc@insper.edu.br
-# - aluno B: Luís Filipe Loureiro, luisfml@insper.edu.br
 import random
 
 
@@ -14,13 +9,12 @@ def carregar_cenarios():
             "opcoes": {
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca",
-                "fumódramo": "ir tomar um ar poluído no fumódramo"
+                "biblioteca": "Ir para a biblioteca"
             }
-        },
+        },    
         "andar VR": {
             "titulo": "Andar da distração",
-            "descricao": "Você sabe que está escolhendo jogar video-game em vez de estudar né estudante",
+            "descricao": "Andar para jogar video game em vez de fazer o trabalho",
             "opcoes": { 
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "jogar vr": "Ligar o console e joga por horas",
@@ -28,7 +22,7 @@ def carregar_cenarios():
         },
         "jogar vr": {
             "titulo": "jogo infinito",
-            "descricao" : "nucna ira sair dessa sala, somente se ganhar.",
+            "descricao" : "nuca ira sair dessa sala, somente se ganhar.",
             "opcoes": {
                 "tentar tirar o oculos": "chute um numero de 0 a 10",
                 "desistir": "desista"
@@ -53,10 +47,9 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada",
-                
+                "inicio": "Voltar para o saguao de entrada"
             }
-        },
+        }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -101,16 +94,6 @@ def main():
             game_over = True
 
         else:
-
-            print ("\nVocê terá que fazer uma escolha: \n")
-            for choice in opcoes:
-                print()
-                print("{0}: {1}".format(choice,opcoes[choice]))
-                print()
-            escolha = input("Eai? O que você decidiu fazer? ")
-
-
-        else:
             for e in opcoes:
                 print('- ' + e)
             
@@ -127,12 +110,11 @@ def main():
                         coins += 500
                         print("Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
                         escolha = "inicio"
+                        nome_cenario_atual = "inicio"
                        
                     if vida == 0:
                         game_over = True
-                    else:
-                        if escolha in opcoes:
-                            nome_cenario_atual = escolha
+        
                 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
