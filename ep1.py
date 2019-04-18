@@ -27,7 +27,7 @@ def carregar_cenarios():
         },
         "jogar vr": {
             "titulo": "jogo infinito",
-            "descricao" : "nuca ira sair dessa sala, somente se ganhar.",
+            "descricao" : "nucna ira sair dessa sala, somente se ganhar.",
             "opcoes": {
                 "tentar tirar o oculos": "chute um numero de 0 a 10",
                 "desistir": "desista"
