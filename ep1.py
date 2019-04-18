@@ -18,7 +18,7 @@ def carregar_cenarios():
             "descricao": "Andar para jogar video game em vez de fazer o trabalho",
             "opcoes": { 
                 "inicio": "Tomar o elevador para o saguao de entrada",
-                "jogar vr": "Ligar o console e joga por horas",
+                "jogar VR": "Ligar o console e joga por horas",
             }
         },
         "jogar VR": {
@@ -101,8 +101,7 @@ def main():
     coins = 0
     
     
-    while not game_over:
-        vr = 5
+    
         
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
