@@ -13,7 +13,7 @@ def carregar_cenarios():
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "fumódramo": "ir tomar um ar poluído no fumódramo"
+                "fumódromo": "ir tomar um ar poluído no fumódramo"
             }
         },
             
@@ -56,6 +56,18 @@ def carregar_cenarios():
                 
             }
         },
+    
+    
+    "fumódromo": {
+            "titulo": "fomódromo",
+            "descricao": "Você está no lugar mais poluído do Insper!",
+            "opcoes": {
+                "continuar no fumódromo": "Continuar e dar uma relaxada",
+                "início": "Voltar para o saguao de entrada",
+                "biblioteca": "Ir para a biblioteca",
+                "fumódromo": "ir tomar um ar poluído no fumódramo"
+            }
+        }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
