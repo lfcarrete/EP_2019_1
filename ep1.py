@@ -14,12 +14,13 @@ def carregar_cenarios():
             "opcoes": {
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "biblioteca": "Ir para a biblioteca",
+                "fumódramo": "ir tomar um ar poluído no fumódramo"
             }
-        },    
+        },
         "andar VR": {
             "titulo": "Andar da distração",
-            "descricao": "Andar para jogar video game em vez de fazer o trabalho",
+            "descricao": "Você sabe que está escolhendo jogar video-game em vez de estudar né estudante",
             "opcoes": { 
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "jogar vr": "Ligar o console e joga por horas",
@@ -52,9 +53,10 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguao de entrada",
+                
             }
-        }
+        },
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
@@ -97,6 +99,16 @@ def main():
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
+
+        else:
+
+            print ("\nVocê terá que fazer uma escolha: \n")
+            for choice in opcoes:
+                print()
+                print("{0}: {1}".format(choice,opcoes[choice]))
+                print()
+            escolha = input("Eai? O que você decidiu fazer? ")
+
 
         else:
             for e in opcoes:
