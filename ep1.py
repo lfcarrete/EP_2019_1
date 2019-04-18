@@ -91,7 +91,10 @@ def main():
 
             # Aluno B: substitua este comentário e a linha abaixo pelo código
             # para pedir a escolha do usuário.
-            escolha = ""
+            print ("Você terá que fazer uma escolha: escolha um caminho")
+            print(cenario_atual["opcoes"])
+                
+            escolha = input("Eai? O que você decidiu fazer? ")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
