@@ -10,7 +10,7 @@ def carregar_cenarios():
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "fumódromo": "Ir para o fumódromo"
+                "fumodromo": "Ir para o fumódromo"
             }
         },    
         "andar VR": {
@@ -55,18 +55,27 @@ def carregar_cenarios():
         },
     
     
-    "fumódromo": {
+        "fumodromo": {
             "titulo": "fomódromo",
             "descricao": "Você está no lugar mais poluído do Insper!",
             "opcoes": {
-                "continuar no fumódromo": "Continuar e se juntar ",
-                "início": "Voltar para o saguao de entrada",
-                "biblioteca": "Ir para a biblioteca",
-                "fumódromo": "ir tomar um ar poluído no fumódramo"
+                "continuar no fumodromo": "continuar e se juntar a uma rodinha",
+                "inicio": "Voltar para o saguao de entrada",
+            }
+        },
+        
+        "continuar no fumodromo": {
+            "titulo": "fomódromo",
+            "descricao": "Você foi oferecido um pega de juul",
+            "opcoes": {
+                "aceitar o juul": "Experimentar essa nova droga popular entre os jovens",
+                "inicio": "Declinar e voltar para o saguão"
 
             }
         }
+    
     }
+    
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -137,9 +146,7 @@ def main():
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             
-            else:
-                print("Sua indecisão foi sua ruína!")
-                game_over = True
+            
 
     print("Você morreu!")
 
