@@ -1,8 +1,5 @@
-# EP 2019-1: Escape Insper
-#
-# Alunos: 
-# - aluno A: Luis Filipe Carrete, luisfsc@insper.edu.br
-# - aluno B: Luís Filipe Loureiro, luisfml@insper.edu.br
+import random
+
 
 def carregar_cenarios():
     cenarios = {
@@ -13,13 +10,12 @@ def carregar_cenarios():
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
-                "fumódromo": "ir tomar um ar poluído no fumódramo"
+                "fumódromo": "Ir para o fumódromo"
             }
-        },
-            
+        },    
         "andar VR": {
             "titulo": "Andar da distração",
-            "descricao": "Você sabe que está escolhendo jogar video-game em vez de estudar né estudante",
+            "descricao": "Andar para jogar video game em vez de fazer o trabalho",
             "opcoes": { 
                 "inicio": "Tomar o elevador para o saguao de entrada",
                 "jogar vr": "Ligar o console e joga por horas",
@@ -29,7 +25,7 @@ def carregar_cenarios():
             "titulo": "jogo infinito",
             "descricao" : "nuca ira sair dessa sala, somente se ganhar.",
             "opcoes": {
-                "bater no chefao": "chute um numero de 0 a 10",
+                "tentar tirar o oculos": "chute um numero de 0 a 10",
                 "desistir": "desista"
             }
         },
@@ -52,6 +48,7 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
+
                 "inicio": "Voltar para o saguao de entrada",
                 
             }
@@ -66,6 +63,7 @@ def carregar_cenarios():
                 "início": "Voltar para o saguao de entrada",
                 "biblioteca": "Ir para a biblioteca",
                 "fumódromo": "ir tomar um ar poluído no fumódramo"
+
             }
         }
     }
@@ -88,7 +86,15 @@ def main():
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
+    
+    vida = 3
+    
+    coins = 0
+    
+    
     while not game_over:
+        vr = 5
+        
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
         descricao_cenario_atual = cenario_atual['descricao']
@@ -102,15 +108,30 @@ def main():
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
+
         else:
-
-            print ("\nVocê terá que fazer uma escolha: \n")
-            for choice in opcoes:
-                print()
-                print("{0}: {1}".format(choice,opcoes[choice]))
-                print()
-            escolha = input("Eai? O que você decidiu fazer? ")
-
+            for e in opcoes:
+                print('- ' + e)
+            
+            escolha = input("O que vai fazer? ")
+            
+            if escolha == "tentar tirar o oculos":
+                chuteVR = int(input("Chute numero de 0 a 10 "))
+                while vida > 0 and chuteVR != vr:
+                    chuteVR = int(input("Chute numero de 0 a 10 "))
+                    if chuteVR != vr:
+                        vida -= 1
+                        print('Vida: {0}'.format(vida))
+                    else:
+                        coins += 500
+                        print("Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
+                        escolha = "inicio"
+                        nome_cenario_atual = "inicio"
+                       
+                    if vida == 0:
+                        game_over = True
+        
+                
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             else:
