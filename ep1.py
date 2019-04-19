@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 
 def carregar_cenarios():
@@ -100,8 +100,9 @@ def main():
     
     coins = 0
     
-    
-    
+    vr = randint(0,10)
+    while not game_over:
+        
         
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
@@ -126,13 +127,16 @@ def main():
             if escolha == "tentar tirar o oculos":
                 chuteVR = int(input("Chute numero de 0 a 10 "))
                 if chuteVR != vr:
-                    
+                    vida -=1
                     while vida > 0 and chuteVR != vr:
                         chuteVR = int(input("Chute numero de 0 a 10 "))
-                        if chuteVR != vr:
+                        if chuteVR > vr:
                             vida -= 1
+                            print ("Muito alto!")
                             print('Vida: {0}'.format(vida))
-                       
+                        elif chuteVR < vr:
+                           print("Muito baixo!")
+                           print("Vida: {0}".format(vida))
                     if vida == 0:
                         game_over = True
                 else:
