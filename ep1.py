@@ -94,7 +94,7 @@ def main():
     
     while not game_over:
         vr = random.randint(0,10)
-        
+        monstro = random.randint(0,15)
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
         descricao_cenario_atual = cenario_atual['descricao']
@@ -103,7 +103,31 @@ def main():
         print(titulo_cenario_atual)
         print("-" * len(titulo_cenario_atual))
         print(descricao_cenario_atual)
-
+        
+        if monstro == 7:
+            print("\n Um seguranca apareceu e quer te expulsar do predio... ")
+            monstrovivo = True
+            while monstrovivo and vida > 0:
+                monstroataque = random.randint(0,2)
+                usuarioataque = int(input("Escreva 1 para atacar ou 2 para defender!"))
+                if monstroataque == 2 and usuarioataque == 1:
+                    print("O monstro defendeu seu ataque.")
+                elif monstroataque == 1 and usuarioataque == 1:
+                    print("o monstro te acertou e agora voce tem {0} vidas".format(vida))
+                elif monstroataque == 0 and usuarioataque == 1:
+                    monstrovivo = False
+                elif monstroataque == 2 and usuarioataque == 2:
+                    print('nada aconteceu')
+                elif monstroataque == 0 and usuarioataque == 2:
+                    print('nada aconteceu')
+                elif monstroataque == 1 and usuarioataque == 2:
+                    print('Voce defendeu o ataque do monstro')
+            if monstrovivo == False:
+                coins += 500
+                print("\n Consegiu matar o monstro. Ganhou 500 coins! Agora voce tem {0} coins".format(coins))
+                print("Voltou para o saguao... fique atento com os segurancas \n")
+                cenario_atual = cenarios["inicio"]
+        
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
