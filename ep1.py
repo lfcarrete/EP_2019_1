@@ -93,7 +93,7 @@ def main():
     
     
     while not game_over:
-        vr = random.randint(0,10)
+        vr = 5
         
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
