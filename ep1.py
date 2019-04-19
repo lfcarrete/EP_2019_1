@@ -8,7 +8,6 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar VR": "Ir jogar um pouco de Realidade Virtual",
-                "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
                 "fumodromo": "Ir para o fumódromo"
             }
@@ -29,7 +28,7 @@ def carregar_cenarios():
                 "desistir": "desista"
             }
         },
-        "andar professor": {
+        "andar do professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
             "opcoes": {
@@ -72,8 +71,16 @@ def carregar_cenarios():
                 "inicio": "Declinar e voltar para o saguão"
 
             }
-        }
-    
+        },
+            
+       "aceitar o juul": {
+            "titulo": "aceitar o juul",
+            "descricao": "Você acabou de aceitar o poderoso juul e ganhou o poder de teletransporte desde que acerte a cor desse mesmo juul. Topa o desafio?",
+            "opcoes": {
+                "aceitar o famoso desafio do juul": " Tentar acertar a cor desse instrumento e se aproximar da sala onde esta o mestre que pode adiar o EP!",
+                "inicio": "Declinar e voltar para o saguão"     
+                        }
+                        },
     }
     
     nome_cenario_atual = "inicio"
@@ -147,6 +154,23 @@ def main():
                     cenarios["jogar vr"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
                 escolha = "inicio" 
                 
+            if escolha == "aceitar o famoso desafio do juul":
+                pergunta=input("Qual a cor então espertão?")
+                while pergunta != "preto" and vida >0:
+                    print("Errouuuuu")
+                    vida -=1
+                    print ("Você tem {0} vidas".format(vida))
+                    pergunta=input("Qual a cor então espertão?")
+                if pergunta =="preto":
+                    print("Você acertou!")
+                    with open ("auxilio para EP1.py", "r") as arquivo:
+                        conteudo=arquivo.read()
+                    print(conteudo)
+                        
+            
+            
+            
+            
             if escolha in opcoes:
                 nome_cenario_atual = escolha
             
