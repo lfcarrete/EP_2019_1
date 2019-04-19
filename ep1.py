@@ -126,19 +126,20 @@ def main():
             
             if escolha == "tentar tirar o oculos":
                 chuteVR = int(input("Chute numero de 0 a 10 "))
-                if chuteVR != vr:
-                    vida -=1
-                    while vida > 0 and chuteVR != vr:
-                        chuteVR = int(input("Chute numero de 0 a 10 "))
-                        if chuteVR > vr:
-                            vida -= 1
-                            print ("Muito alto!")
-                            print('Vida: {0}'.format(vida))
-                        elif chuteVR < vr:
-                           print("Muito baixo!")
-                           print("Vida: {0}".format(vida))
-                    if vida == 0:
-                        game_over = True
+                
+                while vida > 0 and chuteVR != vr:
+                    
+                    if chuteVR > vr:
+                        vida -= 1
+                        print ("Muito alto!")
+                        print('Vida: {0}'.format(vida))
+                    elif chuteVR < vr:
+                        vida -= 1
+                        print("Muito baixo!")
+                        print("Vida: {0}".format(vida))
+                    chuteVR = int(input("Chute numero de 0 a 10 "))    
+                if vida == 0:
+                    game_over = True
                 else:
                     coins += 500
                     print("Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
