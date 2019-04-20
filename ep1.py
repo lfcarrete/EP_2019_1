@@ -107,10 +107,9 @@ def main():
     
     coins = 0
     
-    vr = randint(0,10)
     while not game_over:
-        
-        
+        vr = randint(0,10)    
+        monstro = randint(0,10)
         cenario_atual = cenarios[nome_cenario_atual]
         titulo_cenario_atual = cenario_atual['titulo']
         descricao_cenario_atual = cenario_atual['descricao']
@@ -119,6 +118,45 @@ def main():
         print(titulo_cenario_atual)
         print("-" * len(titulo_cenario_atual))
         print(descricao_cenario_atual)
+        
+          
+        if monstro == 7:
+            print("\n Um seguranca apareceu e quer te expulsar do predio... ")
+            monstrovivo = True
+            caminho_usuario = input("Deseja lutar ou fugir? ")
+            if caminho_usuario == "lutar":
+                
+                while monstrovivo and vida > 0:
+                    monstroataque = randint(0,2)
+                    usuarioataque = int(input("Escreva 1 para atacar ou 2 para defender!"))
+                    if monstroataque == 2 and usuarioataque == 1:
+                        print("O seguranca defendeu seu ataque.")
+                    elif monstroataque == 1 and usuarioataque == 1:
+                        vida -= 1
+                        print("o seguranca te acertou e agora voce tem {0} vidas".format(vida))
+                    elif monstroataque == 0 and usuarioataque == 1:
+                        monstrovivo = False
+                    elif monstroataque == 2 and usuarioataque == 2:
+                        print('nada aconteceu')
+                    elif monstroataque == 0 and usuarioataque == 2:
+                        print('nada aconteceu')
+                    elif monstroataque == 1 and usuarioataque == 2:
+                        print('Voce defendeu o ataque do monstro')
+                if monstrovivo == False:
+                    coins += 500
+                    print("\n Consegiu matar o seguranca. Ganhou 500 coins! Agora voce tem {0} coins".format(coins))
+                    print("Voltou para o saguao... fique atento com os segurancas \n")
+                    cenario_atual = cenarios["inicio"]
+            elif caminho_usuario == "fugir":
+                usuarioescape = randint(0, 100)
+                monstroescape = randint(0, 100)
+                if usuarioescape >= monstroescape:
+                    print("\n Voce conseguiu fugir do seguranca e esta agora no saguao")
+                    cenario_atual = cenarios["inicio"]
+                else:
+                    print('\n O seguranca te pegou... \n ')
+                    
+                    game_over = True
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -149,7 +187,7 @@ def main():
                     game_over = True
                 else:
                     coins += 500
-                    print("Escapou e ganhou 500 coins. Agora voce tem {0} coins".format(coins))
+                    print("Escapou e ganhou 500 coins. Agora voce tem {0} coins \n".format(coins))
                     print("Adiquiriu a opcao de fugir para o inicio")
                     cenarios["jogar vr"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
                 escolha = "inicio" 
@@ -164,7 +202,7 @@ def main():
                 if pergunta =="preto":
                     print("Você acertou!")
                     with open ("auxilio para EP1.py", "r") as arquivo:
-                        conteudo=arquivo.read()
+                        conteudo = arquivo.read()
                     print(conteudo)
                         
             
@@ -173,7 +211,11 @@ def main():
             
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-            
+            else:
+                print("Sua indecisão foi sua ruína!")
+                game_over = True
+
+    print("Você morreu!")
             
 
     print("Você morreu!")
