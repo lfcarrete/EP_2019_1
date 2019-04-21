@@ -151,12 +151,15 @@ def main():
                 usuarioescape = randint(0, 100)
                 monstroescape = randint(0, 100)
                 if usuarioescape >= monstroescape:
-                    print("\n Voce conseguiu fugir do seguranca e esta agora no saguao")
+                    print("\n Voce conseguiu fugir do seguranca e esta agora no saguao \n")
                     cenario_atual = cenarios["inicio"]
                 else:
                     print('\n O seguranca te pegou... \n ')
                     
                     game_over = True
+            else:
+                print("/n Nao identificamos o que escreveu. ")
+                game_over = True
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -189,7 +192,7 @@ def main():
                     coins += 500
                     print("Escapou e ganhou 500 coins. Agora voce tem {0} coins \n".format(coins))
                     print("Adiquiriu a opcao de fugir para o inicio")
-                    cenarios["jogar vr"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
+                    cenarios["jogar VR"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
                 escolha = "inicio" 
                 
             if escolha == "aceitar o famoso desafio do juul":
