@@ -198,13 +198,30 @@ def main():
                     print("Errouuuuu")
                     vida -=1
                     print ("Você tem {0} vidas".format(vida))
-                    pergunta=input("Qual a cor então espertão?")
+                    pergunta=input("Qual a cor então espertão? ")
                 if pergunta =="preto":
                     print("Você acertou!")
-                    with open ("auxilio para EP1.py", "r") as arquivo:
-                        conteudo = arquivo.read()
-                    print(conteudo)
+                    questionamento=input("Você conseguiu chegar na sala escura do professor e encontra o PC do professor aberto. O que deseja fazer? fuçar ou deixar de lado: ")
+                    
+            
+                    
+                if questionamento == "fuçar":
+                    print()
+                    print("Você encontrou todas as dicas para fazer um EP perfeito! Missão cumprida capitão nascimento!")
+                    print()
+                    print("Fim de jogo! Você terminou o jogo com {0} vidas e {1} moedas.".format(vida, coins))
+                    game_over=True 
+                
+                elif questionamento== "deixar de lado":
+                    print()
+                    print("Faltou coragem soldado! Coma um brócoles e tente novamente")
+                    print()
+                    print("Fim de jogo!")
+                    print()
+                    game_over=True
+                    
                         
+                      
             
             
             
@@ -215,10 +232,10 @@ def main():
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
 
-    print("Você morreu!")
+    print("Até a próxima bravo soltado!")
             
 
-    print("Você morreu!")
+    
 
 
 # Programa principal.
