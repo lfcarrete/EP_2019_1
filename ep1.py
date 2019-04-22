@@ -209,11 +209,12 @@ def main():
             
                     
                 if questionamento == "fuçar":
+                
                     print()
                     print("Você encontrou todas as dicas para fazer um EP perfeito! Missão cumprida capitão nascimento!")
                     print()
                     print("Fim de jogo! Você terminou o jogo com {0} vidas e {1} moedas.".format(vida, coins))
-                    game_over=True 
+                    game_over=True
                 
                 elif questionamento== "deixar de lado":
                     print()
@@ -231,7 +232,7 @@ def main():
             
             if escolha in opcoes:
                 nome_cenario_atual = escolha
-            else:
+            elif vida == 0:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
 
