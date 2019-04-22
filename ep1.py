@@ -121,9 +121,15 @@ def main():
         
           
         if monstro == 7:
+            with open ("apoio ep1.py", "r") as leitura:
+                a=leitura.read()
+            print(a)
             print("\n Um seguranca apareceu e quer te expulsar do predio... ")
             monstrovivo = True
             caminho_usuario = input("Deseja lutar ou fugir? ")
+            
+
+            
             if caminho_usuario == "lutar":
                 
                 while monstrovivo and vida > 0:
