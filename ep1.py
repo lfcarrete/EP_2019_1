@@ -193,7 +193,7 @@ def main():
                     print("Escapou e ganhou 500 coins. Agora voce tem {0} coins \n".format(coins))
                     print("Adiquiriu a opcao de fugir para o inicio")
                     cenarios["jogar VR"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
-                escolha = "inicio" 
+                    escolha = "inicio" 
                 
             if escolha == "aceitar o famoso desafio do juul":
                 pergunta=input("Qual a cor então espertão?")
@@ -208,8 +208,7 @@ def main():
                     
             
                     
-                if questionamento == "fuçar":
-                
+                if questionamento == "fuçar" and coins>=500:
                     print()
                     print("Você encontrou todas as dicas para fazer um EP perfeito! Missão cumprida capitão nascimento!")
                     print()
@@ -224,7 +223,11 @@ def main():
                     print()
                     game_over=True
                     
-                        
+                elif questionamento== "fuçar" and coins< 500:
+                    print()
+                    print("O computador requer pelo menos 500 coins para ser acessado")
+                    cenarios["jogar VR"]["opcoes"]["inicio"] = "Voltar ao saguao de entrada do insper"
+                    escolha = "inicio" 
                       
             
             
